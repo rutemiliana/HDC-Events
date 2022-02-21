@@ -13,30 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {//onde o usuario acessa
-    $nome = "Rute";
-    $idade = 12;
-    
-    $arr = [1,2,3,4,5];
+use App\Http\Controllers\EventController; //importando
+use App\Http\Controllers\ContactController;
 
-    $nomes = ["Kiko" , "lindo " , "kk", "nometop, certo"];
+Route::get('/', [EventController::class, 'index'] );//vai usar a action (funcao) index da classe EventController
+Route::get('/events/create', [EventController::class , 'create']); //dentro da classe, chame ese metodo
 
-    return view('welcome', 
-        [
-            'nome' => $nome ,
-            'idade' => $idade,
-            'arr' => $arr,
-            'nomes' => $nomes,
-
-        ]); //tela que vai ter
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact');
 
 Route::get('/produtos', function () { //{o que ta dentro da chave parametro}
+
     $busca = request('search'); //método request resgata os parametros que vem como query string
+    
     return view('products' , ['busca' => $busca]);
 
 });
