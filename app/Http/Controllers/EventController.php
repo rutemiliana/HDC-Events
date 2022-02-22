@@ -3,27 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Event; //importanto a model Event
 
 class EventController extends Controller
 {
 
     public function index() { //rota principal da aplicação. uma action
 
-        $nome = "Rute";
-        $idade = 12;
-        
-        $arr = [1,2,3,4,5];
+        $events = Event::all(); //está pegando todos os eventos do banco
+      
 
-        $nomes = ["Kiko" , "lindo " , "kk", "nometop, certo"];
-
-        return view('welcome', 
-            [
-                'nome' => $nome ,
-                'idade' => $idade,
-                'arr' => $arr,
-                'nomes' => $nomes,
-
-            ]); //tela que vai ter
+        return view('welcome', ['events' => $events]); 
     }
 
 

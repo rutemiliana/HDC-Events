@@ -21,15 +21,5 @@ Route::get('/events/create', [EventController::class , 'create']); //dentro da c
 
 Route::get('/contact');
 
-Route::get('/produtos', function () { //{o que ta dentro da chave parametro}
 
-    $busca = request('search'); //método request resgata os parametros que vem como query string
-    
-    return view('products' , ['busca' => $busca]);
-
-});
-
-Route::get('/product_teste/{id?}', function ($id = null) { //{o que ta dentro da chaveé parametro}
-    return view('product', ['id' => $id]); //manda o id pra view
-});
 

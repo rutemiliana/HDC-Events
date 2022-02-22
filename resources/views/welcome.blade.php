@@ -1,36 +1,33 @@
 @extends('layouts.main')
 @section('title', 'HDC')
 @section('content')
+
+<div id="search-container" class="col-md-12">
+    <h1>Busque um evento</h1>
+    <form action="">
+        <input type="text" id="search" name="search" class="form-control" placeholder="Procurar">
+    </form>
+</div>
+<div id="events-container" class="col-md-12">
+    <h2>Próximos eventos<h2>
+    <p>Veja os eventos dos próximos dias</p>
+    <div id="cards-container" class="row">
+        @foreach($events as $event)
+        <div id="card-col-md-3">
+            <img src="/img/como-escolher-um-bom-curso-de-oratoria1.jpg" alt="{{ $event->title}}">
+        </div>
+        @endforeach
+
+    </div>
+</div>
+
+
+<!--@foreach($events as $event) 
+    <p>{{$event -> title}} -- {{$event -> description}} </p>
+
+@endforeach-->
     
-{{--
-        <h1>algum titulo</h1>
-            @if(10>5)
-                <p> a condição é verdadeira</p>
-            @endif
 
-                <p> {{$nome}} </p>
-
-            @if($nome=="Irineu")
-                <p> O nome é irineu</p>
-            @elseif($nome == "Rute")
-                <p>O nome é Rute ok</p>
-            @else 
-                <p>O nome é Rute {{$nome}} e tem {{$idade}} anos</p>
-            @endif
-
-            @for($i = 0 ; $i < count($arr) ; $i++)
-                <p>{{ $arr[$i] }} - {{ $i }}</p>
-                @if($i == 2)
-                <p>O i é {{ $i }}</p>
-                @endif
-            @endfor
-            
-            @foreach($nomes as $ok)
-                <p> {{$loop -> index}}</p> 
-                <p> {{ $ok }}</p>
-            @endforeach
-            <!--contário html -->
-            {{--comentario blade--}}
            
-        @endsection
+@endsection
    
