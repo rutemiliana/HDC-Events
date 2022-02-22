@@ -10,9 +10,7 @@ class EventController extends Controller
 
     public function index() { //rota principal da aplicação. uma action
 
-        $events = Event::all(); //está pegando todos os eventos do banco
-      
-
+        $events = Event::all(); //está pegando todos os eventos do banco. model Event
         return view('welcome', ['events' => $events]); 
     }
 

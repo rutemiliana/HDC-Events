@@ -13,19 +13,23 @@
     <p>Veja os eventos dos próximos dias</p>
     <div id="cards-container" class="row">
         @foreach($events as $event)
-        <div id="card-col-md-3">
-            <img src="/img/como-escolher-um-bom-curso-de-oratoria1.jpg" alt="{{ $event->title}}">
+        <div class="card col-md-3">
+            <img src="/img/como-escolher-um-bom-curso-de-oratoria1.jpg" class="" alt="{{ $event->title}}">
+            <div class="card-body">
+                <p class="card-date">10/09/2020</p>
+                <h5 class="card-title">{{ $event->title}}</h5>
+                <p class="card-participants"> X participlantes</p>
+                <a href="#" class="btn btn-primary">Saber mais</a>
+            </div>
         </div>
         @endforeach
-
     </div>
 </div>
 
 
-<!--@foreach($events as $event) 
+@foreach($events as $event) 
     <p>{{$event -> title}} -- {{$event -> description}} </p>
-
-@endforeach-->
+@endforeach
     
 
            

@@ -1,7 +1,61 @@
+/*General*/
 *{
     font-family:'Roboto';
 }
 
+body{
+    min-height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #CCC;
+}
+
+.row{
+    margin: 0;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.btn-primary{
+    background-color: #F2A340;
+    border-color: 2px solid #C28008;
+}
+
+.btn-primary:hover{
+    background-color: #C28008;
+    border-color:  #C28008;
+}
+
+/*navbar*/
+
+
 #navbar img{
     width: 50px;
+}
+
+#navbar{
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 5px 0;
+}
+
+#navbar{
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 5px 0;
+}
+
+#navbar a{
+    font-size: 14px;
+    color: #757575;
+}
+
+#navbar a:hover{
+    color: #F2A340;
 }
