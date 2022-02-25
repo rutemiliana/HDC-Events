@@ -59,3 +59,18 @@ header{
 #navbar a:hover{
     color: #F2A340;
 }
+
+/*Event create page*/
+#event-create-container{
+    padding: 30px;
+}
+
+#event-create-container label{
+    font-weight: bold;
+}
+
+#event-create-container input,
+#event-create-container select,
+#event-create-container label {
+    font-size: 20px;
+}
