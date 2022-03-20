@@ -8,7 +8,7 @@
         <h1>
             Crie seu evento
         </h1>
-        <form action ="/events" method="POST">
+        <form action="/events" method="POST">
             @csrf
             <div class="form-group">
                 <label for="title">Evento:</label>
@@ -29,8 +29,9 @@
                 <label for="description">Descrição</label>
                 <textarea type="text" class="form-control" id="description" name="description" placeholder="O que vai acontecer no evento?"></textarea>
             </div>
-            <input type="submit" class="btn btn-primary" value="Criar evento">
 
+            
+            <input type="submit" class="btn btn-primary" value="Criar evento">
         </form>
     </div>
 

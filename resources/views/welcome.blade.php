@@ -10,7 +10,7 @@
 </div>
 <div id="events-container" class="col-md-12">
     <h2>Próximos eventos<h2>
-    <p>Veja os eventos dos próximos dias</p>
+    <p class="subtitle">Veja os eventos dos próximos dias</p>
     <div id="cards-container" class="row">
         @foreach($events as $event)
         <div class="card col-md-3">
@@ -27,9 +27,9 @@
 </div>
 
 
-@foreach($events as $event) 
+{{--@foreach($events as $event) 
     <p>{{$event -> title}} -- {{$event -> description}} </p>
-@endforeach
+@endforeach--}}
     
 
            
