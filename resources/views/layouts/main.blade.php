@@ -43,7 +43,18 @@
                 </div>
             </nav>
         </header>
-        @yield('content')
+        
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    @if(session('msg'))
+                        <p class="msg">{{ session('msg') }} </p>
+                    @endif
+                </div>
+            </div>
+            @yield('content')
+        </main>
+       
         <footer>HDC Events &copy:2020</footer>
 
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
