@@ -13,6 +13,11 @@ class Event extends Model
         'private',
         'description',
       ];
+
+      //especifica quue items é uma array e não uma string
+      protected $casts = [
+        'items' => 'array'
+      ];
       
     use HasFactory;
 }
