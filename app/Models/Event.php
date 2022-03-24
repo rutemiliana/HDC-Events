@@ -12,6 +12,7 @@ class Event extends Model
         'city',
         'private',
         'description',
+        'image'
       ];
 
       //especifica quue items é uma array e não uma string
