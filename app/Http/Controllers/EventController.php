@@ -10,6 +10,14 @@ class EventController extends Controller
 
     public function index() { //rota principal da aplicação. uma action
 
+        //filtro de registro
+        $search = request('search');
+
+        //se tiver algo no campo search
+        if($search){
+
+        }
+
         $events = Event::all(); //está pegando todos os eventos do banco. model Event
         return view('welcome', ['events' => $events]); 
     }
