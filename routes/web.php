@@ -17,7 +17,7 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get('/', [EventController::class, 'index'] );//vai usar a action (funcao) index da classe EventController
-Route::get('/events/create', [EventController::class , 'create']); //dentro da classe, chame ese metodo
+Route::get('/events/create', [EventController::class , 'create'])->middleware('auth'); //dentro da classe, chame ese metodo. middleware serve para dar acesso a somente quem tiver logado
 Route::get('/events/{id}', [EventController::class , 'show']);
 Route::post('/events', [EventController::class , 'store']); //dentro da classe, chame ese metodo
 //Route::post('/events', [EventController::class , 'show']);
@@ -25,3 +25,7 @@ Route::get('/contact');
 
 
 
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
+
 
 class Event extends Model
 {
@@ -19,6 +21,15 @@ class Event extends Model
       protected $casts = [
         'items' => 'array'
       ];
+
+      //informa ao laravel que esse é um campo de data
+      protected $dates = ['date']; 
+
+      public function user(){
+        return $this->belongsTo(User::class);
+      }
+
+    
       
     use HasFactory;
 }

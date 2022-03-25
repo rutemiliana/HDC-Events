@@ -15,11 +15,14 @@ class EventController extends Controller
 
         //se tiver algo no campo search
         if($search){
+            $events = Event::where([
+                ['title' , 'like' ,'%' .$search.'%']
+            ])->get();
+        } else {
+             $events = Event::all(); //está pegando todos os eventos do banco. model Event
+        } 
 
-        }
-
-        $events = Event::all(); //está pegando todos os eventos do banco. model Event
-        return view('welcome', ['events' => $events]); 
+       return view('welcome', ['events' => $events , 'search' =>  $search ]); 
     }
 
 
@@ -31,6 +34,7 @@ class EventController extends Controller
        
         $event = new Event;
         $event->title = $request->title;
+        $event->date = $request->date;
         $event->city = $request->city;
         $event->private = $request->private;
         $event->description = $request->description;
@@ -55,6 +59,10 @@ class EventController extends Controller
             $event->image = $imageName;
 
         }
+
+        //para ter acesso ao usuario logado
+        $user = auth()->user();
+        $event->user_id = $user->id;
 
         //salva o objeto
         $event->save();
