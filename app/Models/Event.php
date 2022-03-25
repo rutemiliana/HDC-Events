@@ -19,6 +19,9 @@ class Event extends Model
       protected $casts = [
         'items' => 'array'
       ];
+
+      //informa ao laravel que esse é um campo de data
+      protected $dates = ['date']; 
       
     use HasFactory;
 }

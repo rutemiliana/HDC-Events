@@ -12,17 +12,20 @@
     <h2>Próximos eventos<h2>
     <p class="subtitle">Veja os eventos dos próximos dias</p>
     <div id="cards-container" class="row">
-        @foreach($events as $event)
+        @foreach($events as $index=>$event)
         <div class="card col-md-3">
             <img src="/img/events/{{ $event-> image }}" class="" alt="{{ $event->title}}">
             <div class="card-body">
-                <p class="card-date">10/09/2020</p>
+                <p class="card-date">{{ date('d/m/Y') , strtotime($event->date) }}</p>
                 <h5 class="card-title">{{ $event->title}}</h5>
                 <p class="card-participants"> X participlantes</p>
                 <a href="/events/{{ $event->id }}" class="btn btn-primary">Saber mais</a>
             </div>
         </div>
         @endforeach
+        @if(count($events) == 0)
+         <p>Não há eventos disponíveis</p>
+        @endif
     </div>
 </div>
 
