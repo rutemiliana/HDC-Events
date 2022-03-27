@@ -76,12 +76,24 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
 
         /*-variavel para captar o usuário proprietario do evento
-         -o método toArray() pega os dados que vem do objeto e transforma em array; -o método first() pega o primeiro que for encontrado na busca, evitando que compare todos os id com user_id*/
+         -o método toArray() pega os dados que vem do objeto e transforma em array; -o método first() pega o primeiro que for encontrado na busca, evitando que compare todos os id com user_id
+         obs.: a variavel não está funcionando, chamei direto na view
+         */
         $eventOwner = User::where('id' ,  $event->user_id)->first()->toArray;
 
         return view('events.show' , ['event' => $event, 'eventOwner' => $eventOwner ]); // [mandando dados do evento para a view]
 
-        
+    }
+
+    public function dashboard(){
+
+        //variavel para acessar o usuario(user) logado(auth)
+        $user = auth()->user();
+
+        //variável para acessar o relacionamento(function events na model user) sem precisar do where
+        $events = $user-> events;
+
+        return view('events.dashboard' , ['events' => $events]);
     }
 
 }

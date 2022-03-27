@@ -25,7 +25,12 @@ Route::get('/contact');
 
 
 
+Route::get('/dashboard' , [EventController::class , 'dashboard'])->middleware('auth');
+
+/*
+
+rota padrão de dashboard que vem do jetstream
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
+})->name('dashboard');*/
