@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event; //importanto a model Event
+use App\Models\User;
 
 class EventController extends Controller
 {
@@ -73,7 +74,12 @@ class EventController extends Controller
 
     public function show($id){
         $event = Event::findOrFail($id);
-        return view('events.show' , ['event' => $event]); // [mandando dados do evento para a view]
+
+        /*-variavel para captar o usuário proprietario do evento
+         -o método toArray() pega os dados que vem do objeto e transforma em array; -o método first() pega o primeiro que for encontrado na busca, evitando que compare todos os id com user_id*/
+        $eventOwner = User::where('id' ,  $event->user_id)->first()->toArray;
+
+        return view('events.show' , ['event' => $event, 'eventOwner' => $eventOwner ]); // [mandando dados do evento para a view]
 
         
     }

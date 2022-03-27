@@ -189,6 +189,10 @@ a.btn-primary:hover{
 #items-list li{
     display: flex;
 }
+
+#description-container{
+    margin-top: 30px;
+}
 /*Footer*/
 
 footer {
