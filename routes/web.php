@@ -21,6 +21,9 @@ Route::get('/events/create', [EventController::class , 'create'])->middleware('a
 Route::get('/events/{id}', [EventController::class , 'show']);
 Route::post('/events', [EventController::class , 'store']); //dentro da classe, chame ese metodo
 //Route::post('/events', [EventController::class , 'show']);
+
+Route::delete('/events/{id}' , [EventController::class , 'destroy']);
+
 Route::get('/contact');
 
 
