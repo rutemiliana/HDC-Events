@@ -208,6 +208,11 @@ a.btn-primary:hover{
     display: inline-block;
 }
 
+/*Edit Page*/
+.img-preview{
+    width: 100px;
+}
+
 /*Footer*/
 
 footer {

@@ -25,6 +25,9 @@ class Event extends Model
       //informa ao laravel que esse é um campo de data
       protected $dates = ['date']; 
 
+      //tudo que foi enviado pelo put pode ser atualizado
+      protected $guarded = [];
+
       public function user(){
         return $this->belongsTo(User::class);
       }

@@ -6,7 +6,7 @@
     <h1>Busque um evento</h1>
     <form action="/" method="GET">
         <input type="text" id="search" name="search" class="form-control" placeholder="Procurar">
-    </form>
+    </form> 
 </div>
 <div id="events-container" class="col-md-12">
     {{--se tiver algo na busca--}}
