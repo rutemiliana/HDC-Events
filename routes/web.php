@@ -22,9 +22,13 @@ Route::get('/events/{id}', [EventController::class , 'show']);
 Route::post('/events', [EventController::class , 'store'])->middleware('auth'); //dentro da classe, chame ese metodo
 //Route::post('/events', [EventController::class , 'show']);
 Route::delete('/events/{id}' , [EventController::class , 'destroy'])->middleware('auth');
+
+//rotas para editar e atualizar
 Route::get('/events/edit/{id}' , [EventController::class , 'edit'])->middleware('auth');
 Route::put('/events/update/{id}' , [EventController::class , 'update'])->middleware('auth');
 
+//Rota para confirmar presença em um evento 
+Route::post('events/join/{id}' , [EventController::class , 'joinEvent'])->middleware('auth');
 
 Route::get('/contact');
 

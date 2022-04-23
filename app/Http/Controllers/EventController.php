@@ -136,4 +136,17 @@ class EventController extends Controller
         return redirect('/dashboard')->with('msg' , 'Evento editado com sucesso!');
     }
 
+    public function joinEvent($id){
+
+        //variavel pra guardar o usuário que está autenticado
+        $user = auth()->user();
+
+        //insere o id do evento no id do usuario
+        $user->eventsAsParticipant()->attach($id);
+
+        $event = Event::findOrFail($id);
+
+        return redirect('/dashboard')->with('msg' , 'Sua presença está confirmada no evento' . $event->title);
+    }
+
 }
