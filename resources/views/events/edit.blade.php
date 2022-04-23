@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label for="date">Data do evento:</label>
-                <input type="date" class="form-control" id="title" name="date"  value="{{$event->date->format('Y-m-d')}}"> 
+                <input type="date" class="form-control" id="date" name="date" value="{{$event->date->format('Y-m-d')}}"> 
             </div>
             <div class="form-group">
                 <label for="city">Cidade:</label>
@@ -56,9 +56,6 @@
                 <div class="form-group">
                     <input type="checkbox" name="items[]" value="Brindes"> Brindes
                 </div>
-                
-                
-                
             </div>
 
             

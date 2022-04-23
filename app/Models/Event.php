@@ -9,15 +9,19 @@ use App\Models\User;
 
 class Event extends Model
 {
+  use HasFactory;
+
     protected $fillable = [
-        'name',
+        'title',
         'city',
         'private',
         'description',
-        'image'
+        'image',
+        'date',
+        'items'
       ];
 
-      //especifica quue items é uma array e não uma string
+      //especifica que items é uma array e não uma string
       protected $casts = [
         'items' => 'array'
       ];
@@ -25,7 +29,7 @@ class Event extends Model
       //informa ao laravel que esse é um campo de data
       protected $dates = ['date']; 
 
-      //tudo que foi enviado pelo put pode ser atualizado
+      //*permite que tudo que foi enviado pelo put pode ser atualizado, se tiver alguma restrição, só colocar no array
       protected $guarded = [];
 
       public function user(){
@@ -34,5 +38,4 @@ class Event extends Model
 
     
       
-    use HasFactory;
 }
