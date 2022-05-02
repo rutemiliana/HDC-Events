@@ -93,7 +93,13 @@ class EventController extends Controller
         //variável para acessar o relacionamento(function events na model user) sem precisar do where
         $events = $user-> events;
 
-        return view('events.dashboard' , ['events' => $events]);
+        $eventsAsParticipant = $user->eventsAsParticipant;
+
+        return view('events.dashboard' , [
+            'events' => $events,
+            'eventsAsParticipant' => $eventsAsParticipant,
+        
+        ]);
     }
 
     public function destroy($id){
